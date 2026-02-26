@@ -7,10 +7,20 @@ public class Funcionario {
     private String cargo;
     private float salario;
 
+    // CONSTRUTOR
+
+    public Funcionario(String nome, String cargo, float salario) {
+        this.nome = nome;
+        this.cargo = cargo;
+        this.salario = salario;
+    }
+    
+
     // MÉTODOS DE ACESSO (GETTERS E SETTERS)
     public String getNome() {
         return nome;
     }
+
 
     public void setNome(String nome) {
         this.nome = nome;

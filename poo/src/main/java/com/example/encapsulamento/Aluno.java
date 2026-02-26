@@ -1,42 +1,40 @@
 package com.example.encapsulamento;
 
-public class Cliente {
+public class Aluno {
 
-    // ATRIBUTOS DA CLASSE
     private String nome;
-    private int idade;
     private String email;
-    
-    // Construtor
-    
-    
-    public Cliente(String nome, int idade, String email) {
+    private int idade;
+
+    public Aluno(String nome, String email, int idade) {
         this.nome = nome;
-        this.idade = idade;
         this.email = email;
+        this.idade = idade;
     }
 
-    // MÉTODOS DE ACESSO (GETTERS E SETTERS)
     public String getNome() {
         return nome;
     }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public int getIdade() {
-        return idade;
-    }
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
+
     public String getEmail() {
         return email;
     }
+
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
     }
     
     
 }
-
-
