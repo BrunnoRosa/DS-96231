@@ -1,6 +1,6 @@
 package com.example.encapsulamento;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
 
         // POO programação orientada objeto
