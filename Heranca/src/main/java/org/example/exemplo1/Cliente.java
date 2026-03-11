@@ -33,8 +33,6 @@ public class Cliente extends Pessoa {
         return "Cliente{" +
                 "dataCompra='" + dataCompra + '\'' +
                 ", formaPagamento='" + formaPagamento + '\'' +
-                ", nome='" + nome + '\'' +
-                ", idade=" + idade +
                 '}';
     }
 }
