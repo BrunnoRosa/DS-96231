@@ -1,7 +1,6 @@
-package org.example.exemplo1;
+package org.example.exemplo2;
 
-public class Funcionario extends Pessoa {
-
+public class Funcionario extends Pessoa{
     private String matricula;
     private String cargo;
     private double salario;
@@ -43,6 +42,9 @@ public class Funcionario extends Pessoa {
                 "matricula='" + matricula + '\'' +
                 ", cargo='" + cargo + '\'' +
                 ", salario=" + salario +
+                ", nome='" + nome + '\'' +
+                ", idade=" + idade +
                 '}';
     }
 }
+
