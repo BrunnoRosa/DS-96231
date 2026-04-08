@@ -1,0 +1,31 @@
+package com.example.apialunos.controller;
+
+
+import com.example.apialunos.model.AlunoModel;
+import com.example.apialunos.repository.AlunoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/alunos")
+public class AlunoController {
+    @Autowired
+    private AlunoRepository alunoRepository;
+
+    @GetMapping
+    public List<AlunoModel> listarAlunos (){
+        return  alunoRepository.findAll();
+    }
+
+    @PostMapping
+    public ResponseEntity<AlunoModel> salvar (@RequestBody AlunoModel model){
+        alunoRepository.save(model);
+        return  ResponseEntity.status(HttpStatus.CREATED).body(model);
+
+
+    }
+}
