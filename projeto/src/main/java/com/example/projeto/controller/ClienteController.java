@@ -1,38 +1,33 @@
 package com.example.projeto.controller;
 
-import java.util.List;
-
+import com.example.projeto.model.ClienteModel;
+import com.example.projeto.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import com.example.projeto.model.ClienteModel;
-import com.example.projeto.repository.ClienteRepository;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("/clientes")
 public class ClienteController {
+
     @Autowired
-    private ClienteRepository repository;
+    private ClienteService service;
 
     @GetMapping
-    public List <ClienteModel> listar(){
-
-        return repository.findAll();
+    public List<ClienteModel> listar(){
+        return service.listarTodos();
     }
 
     @PostMapping
-    public ResponseEntity<ClienteModel> salvar (@RequestBody ClienteModel cliente){
-        repository.save(cliente);
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(cliente);
+    public ResponseEntity<Map<Object, String>> salvar (@RequestBody ClienteModel model){
+        service.salvarCliente(model);
+        return  ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body(Map.of("Mensagem", "Cliente cadastrado com sucesso."));
     }
-
-
-
 }
